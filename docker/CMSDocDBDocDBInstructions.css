@@ -1,0 +1,27 @@
+/* Make our "menu" be a float on the left */
+
+#LeftColumn3Col {
+  width: 17em;
+  margin-right: 1em;
+  float: left;
+}
+
+#MainColumn3Col {
+  padding-left: 1.5em;
+}
+
+/* hack to display the a "links" used to provide the Table of contents, which in fact should not have any content */
+/* cms instructions */
+#cms-main-content a, #cms-main-content  a:visited, #cms-main-content  a:active, #cms-main-content  a:link {
+   text-decoration: none;
+}
+#cms-main-content  h1 a, #cms-main-content h2 a {
+    text-decoration: underline;
+}
+
+
+/* the lists do not get indentet well then floating element is close */
+
+ol.IEWrap {
+	margin-left: 230px;
+}

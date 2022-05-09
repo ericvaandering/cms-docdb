@@ -1,0 +1,61 @@
+/* Hide error labels until uncovered */
+
+form#documentadd input.error,  form#documentadd textarea.error {
+    background-color: #fee !important;
+    border: 1px solid #993333 ! important;
+}
+
+form#documentadd label.error {
+    color: #933 !important;
+    font-weight: bold;
+
+    background-color: #d33 !important;
+    border: 1px solid #633 !important;
+    color: #fff ! important;
+    /* display: block;*/
+    padding: 2px;
+}
+
+
+#TopicScrollTable {
+  padding-left: 3px;
+  padding-right: 10px;
+}
+
+/* Put the link to list users in a group as close to security scrolls as possible */
+
+.wListUsers td {
+  padding-bottom: 0px;
+}
+
+.ListUsers td {
+  padding-top: 0px;
+}
+
+/* New layout */
+div#AuthorActiveSearch, div#submitter, div#ViewPermissions, div#ModifyPermissions {
+        float: left;
+	margin-right: 20px;
+}
+div#authoring-clearfloats, div#permissions-clearfloats {
+        clear: left;
+}
+div#submitter, div#ViewPermissions {
+	width: 250px;
+}
+
+div#permissions {
+	margin-top: 20px;
+}
+
+table.FileEntry {
+	width: 100%;
+}
+table.FileEntry input[type=file], table.FileEntry input[type=text] {
+	width: 500px;
+}
+
+/* Main css */
+#cms-content-container-inner {
+	width: 740px;
+}

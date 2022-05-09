@@ -1,0 +1,45 @@
+#
+# Description: Configuration file for your projects DocDB settings.
+#      Author: Eric Vaandering (ewv@fnal.gov)
+#    Modified:
+
+# Copyright 2001-2009 Eric Vaandering, Lynn Garren, Adam Bryant
+
+#    This file is part of DocDB.
+
+#    DocDB is free software; you can redistribute it and/or modify
+#    it under the terms of version 2 of the GNU General Public License
+#    as published by the Free Software Foundation.
+
+#    DocDB is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+
+#    You should have received a copy of the GNU General Public License
+#    along with DocDB; if not, write to the Free Software
+#    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+# DB settings
+
+$DocDBHostName = "cms-docdb.cern.ch";
+
+$Public = 1;
+$DebugOutput = 0;
+
+$db_name       = "{{ DOCDB_CONFIG_DATABASE_NAME | default('DocDB') }}";
+$db_host       = "{{ DOCDB_CONFIG_DATABASE_HOST | default('DocDB') }}";
+$db_rwuser     = "";             # You can change the names of the accounts if you are
+$db_rwpass     = "";          # hosting more than one DocDB on the same SQL server
+$db_rouser     =  "{{ DOCDB_CONFIG_RO_USER | default('docdbro') }}";
+$db_ropass     =  "{{ DOCDB_CONFIG_RO_PASSWORD | default('NOTSET') }}";
+
+# Root directories and URLs
+
+$file_root   = "/data/DocDB/";
+$script_root = "/data/www/cgi-bin/PublicDocDB/";
+$web_root    = "https://$DocDBHostName/PublicDocDB/";
+$cgi_root    = "https://$DocDBHostName/cgi-bin/PublicDocDB/";
+$cgi_path    = "/cgi-bin/PublicDocDB/"; # Used for cookies
+
+1;

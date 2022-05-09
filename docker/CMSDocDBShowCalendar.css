@@ -1,0 +1,18 @@
+table.Calendar td.Sunday, table.Calendar td.Saturday{
+  background: #ECF6FA;
+}
+
+a.AddEvent {
+  color: white;
+}
+
+table.ByMonth td {
+  font-size: 90%;
+}
+table.ByMonth td.Today {
+  background: #FFDCA8;
+}
+table.InYear td.Today {
+  background: #FFDCA8;
+}
+

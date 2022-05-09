@@ -1,0 +1,429 @@
+/*html {font-family: Arial, Helvetica, sans-serif;}*/
+body {color: #000000; background-color: #ffffff; /*FFD98C;*/}
+a:visited {color: #663399}
+a:link {color: #003399}
+a:active {color: #003399}
+
+
+
+/* === Some of these deprecated or overriden ==== */
+
+/* Decrease size of left, right columns, move main column to left */
+#LeftColumn3Col {
+  width: 11em;
+}
+#Files {
+  background: white;
+}
+
+#RightColumn3Col {
+  width: 11em;
+}
+
+#MainColumn3Col {
+  padding-left: 13em;
+}
+
+/* Set colors of things that can be set to something light blue */
+
+#LeftColumn3Col, #RightColumn3Col {
+  background: #ECF6FA;
+}
+
+#li.Even, tr.Even, tbody.Even {
+  background: #ECF6FA;
+  background: #eee;
+
+}
+
+
+#li.Odd, tr.Odd, tbody.Odd {
+  background: #ECF6FA;
+  background: #fff;
+
+}
+
+
+/* Other things get orange */
+
+span.InfoHeader {
+  background: #FFDCA8;
+}
+
+/* Put a border and correct padding around InfoHeaders like Abstract, etc */
+
+span.InfoHeader {
+  border: 1px solid black;
+  font-weight: bold;
+  padding-left: 3px;
+  padding-right: 8px;
+}
+
+dt.InfoHeader {
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+#CMSHeaderTable td {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top:   15px;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.LowPaddedTable td, .LowPaddedTable th {
+    padding: 0px;
+}
+.LowPaddedTable td {
+}
+
+
+/* ============= Styles edited by Vidmantas start. TODO: Review and test integrity!!! ============ */
+
+/* general */
+body {
+	font-size: 10pt;
+	font-family: "Arial",sans-serif;
+}
+
+div#cms-main-content {
+	/*font-size: 10.5pt;*/
+	clear: both;
+}
+
+input, textarea, select {
+	margin-top: 5px;
+	margin-bottom: 5px;
+
+	border: 1px solid #999;
+	/*padding: 2px;*/
+}
+
+/* ===== header ======  */
+
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+#cms-content-container{
+	width: 100%;
+	background-color: #369;
+	background-color: #FFD98C;
+	/* background-color: #fafafa; */
+
+}
+
+#cms-content-container-inner {
+	/* not really sure if we need that centering, but a nice-simple centering with two containers */
+	width: 1000px;
+	background-color: #fff;
+	padding: 5px;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+}
+
+#cms-main-content {
+	min-height: 600px;
+}
+
+#header-logo {
+	float: left;
+}
+
+#cms-logo {
+	background: url(cms-docdb-poor-logo.png);
+	width: 48px;
+	height: 60px;
+	background-repeat: no-repeat;
+}
+
+#header-main {
+	/* TODO: how to make it to expand as much as possible ? */
+	width: 900px;
+	width: 100%;
+}
+
+.header-break {
+	clear:both;
+}
+
+#title-div {
+	float: left;
+	/*margin-left: 30px;*/
+}
+
+h1 {
+	text-align: left;
+	margin: 0;
+	color: #333;
+}
+
+#title-div h1 {
+	font-size: 20pt;
+}
+
+div#purpose {
+	/*border: 1px solid #eee;
+	background-color: #FFFFCC;
+	background-color: #fcfcfc;
+	*/
+
+	padding: 5px 15px 5px;
+	min-height: 32px;
+	/*padding-left: 64px;
+	background-image: url(CMS-info-48.png);
+	background-repeat:no-repeat;
+	background-position: 10px 10px;
+	*/
+
+	width: 300px;
+	max-width: 300px;
+
+	/*float: right;*/
+
+
+	margin-top: 5px;
+	margin-left: 20px;
+	margin-right: 5px;
+	/* font-size: 8pt;*/
+}
+
+div#purpose p {
+	margin: 0;
+	margin-bottom: 5pt;
+}
+
+div#purpose {
+	font-style: italic;
+}
+
+div#purpose em {
+	font-style: normal;
+	font-weight: bold;
+}
+
+div#header-search-container {
+	float: right;
+	margin: -5px;
+	margin-left: 0px;
+
+	background-color: #eee;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ddd;
+	margin-right: -5px;
+	border-right: none;
+
+	width: 500px;
+	max-width: 500px;
+
+  	-moz-border-radius-bottomleft: 10px;
+  	-webkit-border-bottom-left-radius: 10px;
+
+
+}
+
+div#header-search-container #header-search-input {
+	width: 300px ! important;
+}
+
+.watermark-search {
+	color: #999 !important;
+	font-style: italic !important;
+	font-size: 10pt !important;
+}
+
+
+
+ul#menu {
+	/* override docDB defaults */
+	margin-left: 100px ! important;
+	padding-left: 0px ! important;
+	vertical-align: bottom;
+    padding-top: 40px;
+}
+ul#menu li {
+	float: left;
+	margin-left: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	list-style-type: none;
+	font-weight: bold;
+}
+ul#menu li a, ul#menu li a:visited, ul#menu li a:active, ul#menu li a:hover {
+	background-color: #369;
+	background-color: #777;
+	color: #fff;
+	padding: 10px;
+	text-decoration: none;
+}
+ul#menu li a:hover, ul#menu li.activated a {
+	color: #fff;
+	background-color: #57a;
+	background-color: #888;
+}
+
+#cms-menu {
+	border-bottom: 2px solid #369;
+	border-bottom: 2px solid #777;
+	margin-top: -10px;
+
+}
+
+#cms_my_account {
+	font-weight: bold;
+    float: right;
+    margin-top: 10px;
+}
+#cms_my_account a{
+	font-weight: normal;
+}
+
+#cms-footer {
+	border-top: 2px solid #777;
+	margin-top: 40px;
+
+}
+
+
+.rounded {
+  -moz-border-radius-topright: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+}
+.rounded-all {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+.rounded-bottom {
+  -moz-border-radius-bottomright: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+}
+
+
+/* header */
+.DocDBNavBar {
+	border-bottom: 2px solid #aaaaaa;
+	//background-color: #369;
+	padding-bottom: 3px;
+	padding-top: 3px;
+
+	font-size: 12pt;
+	text-height: 18pt;
+
+	/*font-weight: bold;*/
+	margin-top: 10px;
+}
+
+.DocDBNavBar, .DocDBNavBar a {
+	/*color: #fff;*/
+}
+
+
+h2, h3, h4 {
+	/*text-align: left; */
+	margin: 10px;
+	color: #666666;
+	text-align: left;
+}
+
+/* links */
+
+a, a:visited, a:active, a:link {
+	color: #333;
+	text-decoration: underline;
+
+}
+
+a:hover {
+	color: #333;
+	text-decoration: none;
+
+}
+
+a.Help, span.Help {
+    text-decoration: none;
+	color: #444;
+	/*color: #004499;*/
+}
+
+a.Help:hover {
+	text-decoration: underline;
+}
+
+
+/* document add */
+form#documentadd input[name=title], form#documentadd input[name=keywords], form#documentadd textarea {
+    width: 700px;
+}
+form#documentadd textarea {
+	height: 50px;
+}
+
+
+/* ----> form validation */
+
+form#documentadd input.error,  form#documentadd textarea.error{
+	background-color: #FFFFD5 !important;
+	border: 1px solid #f66 ! important;
+}
+
+form#documentadd label.error {
+	display: none;
+	color: #966 !important;
+	font-weight: bold;
+
+}
+
+form#documentadd tr.file-upload-row-even {
+}
+
+
+form tr.file-upload-row-odd {
+    background-color: #eee;
+}
+
+
+
+
+/* modify */
+table.GenCustomForm {
+	margin-bottom: 5px;
+}
+
+#ModifyHomeBody #MainColumn3Col>ul>li {
+	list-style-type: none;
+}
+
+/* debug */
+/*dl.debug {
+    color: #ddd;
+    visibility: hidden;
+    display: none;
+}
+*/
+
+
+/* New styles for more slim page */
+#cms-content-container-inner {
+    width: 740px;
+    }
+
+    div#cms-menu {
+        margin-top: 0px;
+            clear: both;
+                }
+                    
+                    ul#menu {
+                        padding-top: 0px; margin-left: 10px!important;
+                            }
+
+
+                            /* TODO: the author listing will look bad.. */
