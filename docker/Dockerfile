@@ -32,21 +32,6 @@ COPY ProdGlobals.pm.j2 /tmp
 # Vidmantis stupid hack (undo at some point)
 RUN cp /var/www/cgi-bin/DocDB/ListTopics /var/www/cgi-bin/DocDB/DocumentDatabase
 
-
-# Install public DocDB
-WORKDIR /
-
-RUN mkdir -p /var/www/cgi-bin/PublicDocDB && cp /DocDB/DocDB/cgi/* /var/www/cgi-bin/PublicDocDB
-RUN mkdir -p /var/www/html/PublicDocDB/Static/ && cp -R /DocDB/DocDB/html/css/ /DocDB/DocDB/html/js/ /DocDB/DocDB/html/img/ /var/www/html/PublicDocDB/Static/
-
-COPY CMS-curvycorners.js CMS-jquery.watermark.min.js /var/www/html/PublicDocDB/Static/js/
-COPY CMSDocDB.css  CMSDocDBDocDBInstructions.css CMSDocDBDocumentAddForm.css CMSDocDBDocumentAddFormT.css CMSDocDBShowCalendar.css CMSDocDBDocumentDatabase.css /var/www/html/PublicDocDB/Static/css/
-
-COPY PublicProjectGlobals.pm /var/www/cgi-bin/PublicDocDB/ProjectGlobals.pm
-COPY PublicProjectRoutines.pm /var/www/cgi-bin/PublicDocDB/ProjectRoutines.pm
-COPY PublicCMSGlobals.pm /var/www/cgi-bin/PublicDocDB/
-COPY PublicGlobals.pm.j2 /tmp
-
 # Install Tivoli Storage Manager
 ADD install_tsm.sh /tmp
 # RUN /tmp/install_tsm.sh   # Was not working on 11-5-2021
