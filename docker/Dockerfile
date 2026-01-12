@@ -1,10 +1,4 @@
-FROM ericvaandering/docdb:latest
-
-
-#RUN yum install -y centos-release-scl
-
-#RUN curl --output /etc/yum.repos.d/security:shibboleth.repo  https://download.opensuse.org/repositories/security:/shibboleth/CentOS_8/security:shibboleth.repo
-#RUN curl -o /etc/yum.repos.d/shibboleth.repo http://download.opensuse.org/repositories/security://shibboleth/CentOS_7/security:shibboleth.repo
+FROM registry.cern.ch/cms-docdb/generic_docdb:2026.0.1
 
 RUN yum install -y shibboleth opensaml-schemas nano && \
     yum clean all && \
@@ -31,7 +25,6 @@ COPY ProdGlobals.pm.j2 /tmp
 
 # Vidmantis stupid hack (undo at some point)
 RUN cp /var/www/cgi-bin/DocDB/ListTopics /var/www/cgi-bin/DocDB/DocumentDatabase
-
 
 # Install public DocDB
 WORKDIR /
