@@ -1,14 +1,9 @@
 FROM registry.cern.ch/cms-docdb/generic_docdb:2026.0.1
 
-RUN yum install -y shibboleth opensaml-schemas nano && \
-    yum clean all && \
-    rm -rf /var/cache/yum
+RUN dnf -y install mod_auth_openidc && \
+    dnf clean all && \
+    rm -rf /var/cache/dnf
 
-RUN curl https://auth.cern.ch/auth/realms/cern/protocol/saml/descriptor > /etc/shibboleth/idp.xml
-RUN curl https://gitlab.cern.ch/authzsvc/docs/shibboleth-configuration/-/raw/master/shibboleth2.xml > /tmp/shibboleth2.xml
-RUN curl https://gitlab.cern.ch/authzsvc/docs/shibboleth-configuration/-/raw/master/attribute-mapper.xml > /etc/shibboleth/attribute-map.xml
-RUN sed -e "s/somehost/cms-docdb/g" /tmp/shibboleth2.xml > /tmp/shibboleth2.xml.new
-RUN sed -e 's/checkAddress="false"/checkAddress="false" consistentAddress="false"/' /tmp/shibboleth2.xml.new > /etc/shibboleth/shibboleth2.xml
 ADD docdb.conf /etc/httpd/conf.d
 ADD index.html /var/www/html/
 ADD CMS-Color-100.gif /var/www/html/DocDB/Static/Public/CMS-Color-100.gif
@@ -23,7 +18,7 @@ COPY PrivateRoutines.pm /var/www/cgi-bin/DocDB/ProjectRoutines.pm
 COPY CMSGlobals.pm /var/www/cgi-bin/DocDB/
 COPY ProdGlobals.pm.j2 /tmp
 
-# Vidmantis stupid hack (undo at some point)
+# Vidmantis hack (undo at some point)
 RUN cp /var/www/cgi-bin/DocDB/ListTopics /var/www/cgi-bin/DocDB/DocumentDatabase
 
 # Install public DocDB
@@ -39,6 +34,7 @@ COPY PublicProjectGlobals.pm /var/www/cgi-bin/PublicDocDB/ProjectGlobals.pm
 COPY PublicProjectRoutines.pm /var/www/cgi-bin/PublicDocDB/ProjectRoutines.pm
 COPY PublicCMSGlobals.pm /var/www/cgi-bin/PublicDocDB/
 COPY PublicGlobals.pm.j2 /tmp
+ADD Hello /
 
 # Install Tivoli Storage Manager
 ADD install_tsm.sh /tmp
