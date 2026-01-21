@@ -106,7 +106,7 @@ $Preferences{Options}{Update}{RequireSubmitter} = $TRUE;
 $CaseInsensitiveUsers = 1;     # Can use "Project" for a name in the
                                # security groups, but "project" in .htaccess
 
-$UserValidation = "shibboleth";          # || "basic" || "certificate"
+$UserValidation = "CERNSSO";          # || "basic" || "certificate"
                                 # Do we do group authorization like V5 and before
                                 # or do we allow .htaccess/.htpasswd users to map to groups (basic)
                                 # or require SSL certificates of users which map to groups (certificate)
