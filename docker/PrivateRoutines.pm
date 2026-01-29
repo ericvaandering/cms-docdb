@@ -121,13 +121,13 @@ sub ProjectBodyStart {
   my @TitleParts = split /\s+/, $PageTitle;
   $PageTitle = join '&nbsp;',@TitleParts;
 
-  my $SearchDiv  = $query -> startform('POST',$Search);
+  my $SearchDiv  = $query -> start_form('POST',$Search);
      $SearchDiv .= 	$query -> textfield(-name => "simpletext", -size => 40, -maxlength => 300, -id=>'header-search-input', -title=>'Search by title, author, topic or by id:DocID');
      $SearchDiv .= 	"&nbsp;";
      $SearchDiv .= 	$query -> submit (-value => "Search");
      $SearchDiv .= 	$query -> hidden(-name => "simple", -default => '1');
      $SearchDiv .= 	"&nbsp;<a href=\"$SearchForm#Advanced\">Advanced search</a>";
-     $SearchDiv .= $query -> endform();
+     $SearchDiv .= $query -> end_form();
 
 
   require "Security.pm";
