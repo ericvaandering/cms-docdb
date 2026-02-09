@@ -62,7 +62,7 @@ sub ProjectHeader {
 # print  "jqueryScripts: @jqueryScripts";
  if (not @jqueryScripts){
      # load jquery if it wasn't loaded
-     print "<script type=\"text/javascript\" src=\"$JSURLPath/jquery-autocomplete/jquery-1.4.2.min.js\"></script>";
+     print "<script type=\"text/javascript\" src=\"$JSURLPath/jquery/jquery-1.4.2.min.js\"></script>";
  }
 
 
